@@ -5,8 +5,11 @@ export function App() {
   return (
     <div>
       Hello!
-      <Button variant="secondary" className={s.myFirst}>
+      <Button variant="primary" className={s.myFirst}>
         My button
+      </Button>
+      <Button variant="secondary" fullWidth>
+        Width 100
       </Button>
     </div>
   );

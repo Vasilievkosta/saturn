@@ -1,5 +1,15 @@
+.button {
+  all: unset;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-info-500);
+  }
+}
+
 .primary {
-  background-color: red;
+  // background-color: red;
+  background-color: var(--color-danger-900);
 }
 
 .secondary {
