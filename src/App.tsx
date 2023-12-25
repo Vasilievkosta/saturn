@@ -11,6 +11,8 @@ export function App() {
       <Button variant="secondary" fullWidth>
         Width 100
       </Button>
+      <Button variant="link">Link</Button>
+      <Button variant="tertiary">tertiary</Button>
     </div>
   );
 }
