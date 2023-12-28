@@ -6,10 +6,16 @@ export function App() {
     <div>
       Hello!
       <Button variant="primary" className={s.myFirst}>
-        My button
+        Button primary
+      </Button>
+      <Button variant="primary" className={s.myFirst} disabled>
+        Button primary
       </Button>
       <Button variant="secondary" fullWidth>
         Width 100
+      </Button>
+      <Button variant="secondary" className={s.myFirst}>
+        Button Secondary
       </Button>
       <Button variant="link">Link</Button>
       <Button variant="tertiary">tertiary</Button>
