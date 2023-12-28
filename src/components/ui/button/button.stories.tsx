@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import svg from "../../../assets/icons/svg.svg";
+import Icon from "../../../assets/icons/logout";
 
-import { Button } from "./";
+import { Button } from ".";
 
 const meta = {
   title: "Components/Button",
@@ -15,12 +17,27 @@ const meta = {
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
     variant: "primary",
-    children: "Primary Button",
+    children: "Button Primary ",
+    disabled: false,
+  },
+};
+
+export const PrimaryWithButton: Story = {
+  args: {
+    variant: "primary",
+    children: (
+      <>
+        <Icon />
+        Button Primary
+        <img src={svg} />
+      </>
+    ),
     disabled: false,
   },
 };
@@ -35,14 +52,14 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
     variant: "tertiary",
-    children: "Tertiary Button",
+    children: "Tertiary",
     disabled: false,
   },
 };
 export const Link: Story = {
   args: {
     variant: "link",
-    children: "Tertiary Button",
+    children: "Link-button",
     disabled: false,
   },
 };
