@@ -41,7 +41,7 @@
 
 .secondary {
   background-color: var(--color-dark-300);
-  box-shadow: 0px 4px 4px 0px rgba(77, 86, 96, 0.13);
+  box-shadow: 0 4px 4px 0 rgba(77, 86, 96, 0.13);
 
   &:hover {
     background-color: var(--color-dark-100);
@@ -56,6 +56,10 @@
   }
 }
 
+.onIcon {
+  transition: fill 0.3s;
+}
+
 .tertiary {
   background-color: transparent;
   border: 1px solid var(--color-accent-500);
@@ -64,6 +68,10 @@
   &:hover {
     background-color: var(--color-dark-500);
     border: 1px solid var(--color-accent-700);
+
+    & svg {
+      fill: greenyellow;
+    }
   }
 
   &:active {

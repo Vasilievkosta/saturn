@@ -1,11 +1,11 @@
 module.exports = {
-  extends: ["@it-incubator/eslint-config", "plugin:storybook/recommended"],
+  extends: ['@it-incubator/eslint-config", "plugin:storybook/recommended'],
   overrides: [
     {
-      files: ["**/*.stories.tsx"],
+      files: ['**/*.stories.tsx'],
       rules: {
+        'no-console': 'off',
         "react-hooks/rules-of-hooks": "off",
-        "no-console": "off",
       },
     },
   ],
