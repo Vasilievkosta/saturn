@@ -1,24 +1,32 @@
-import { Button } from "./components/ui/button";
+import Icon from "@/assets/icons/logoutHover";
+
+// eslint-disable-next-line prettier/prettier
 import s from "./components/ui/button/button.module.scss";
+
+import { Button } from "./components/ui/button";
 
 export function App() {
   return (
     <div>
-      Hello!
-      <Button variant="primary" className={s.myFirst}>
+      <Button className={s.myFirst} variant={"primary"}>
         Button primary
       </Button>
-      <Button variant="primary" className={s.myFirst} disabled>
+      <Button className={s.myFirst} disabled variant={"primary"}>
         Button primary
       </Button>
-      <Button variant="secondary" fullWidth>
+      <Button fullWidth variant={"secondary"}>
         Width 100
       </Button>
-      <Button variant="secondary" className={s.myFirst}>
+      <Button className={s.myFirst} variant={"secondary"}>
         Button Secondary
       </Button>
-      <Button variant="link">Link</Button>
-      <Button variant="tertiary">tertiary</Button>
+      <Button variant={"link"}>Link</Button>
+      <Button variant={"tertiary"}>tertiary</Button>
+      <Button variant={"tertiary"}>
+        <>
+          Icon <Icon className={s.onIcon} iconColor={"red"} />
+        </>
+      </Button>
     </div>
   );
 }

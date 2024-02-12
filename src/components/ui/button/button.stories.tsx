@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import svg from "../../../assets/icons/svg.svg";
-import Icon from "../../../assets/icons/logout";
 
 import { Button } from ".";
+import Icon from "../../../assets/icons/logout";
+import svg from "@/assets/icons/svg.svg";
 
 const meta = {
-  title: "Components/Button",
-  component: Button,
-  tags: ["autodocs"],
   argTypes: {
     variant: {
-      options: ["primary", "secondary", "tertiary", "link"],
       control: { type: "radio" },
+      options: ["primary", "secondary", "tertiary", "link"],
     },
   },
+  component: Button,
+  tags: ["autodocs"],
+  title: "Components/Button",
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -22,15 +22,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    variant: "primary",
     children: "Button Primary ",
     disabled: false,
+    variant: "primary",
   },
 };
 
 export const PrimaryWithButton: Story = {
   args: {
-    variant: "primary",
     children: (
       <>
         <Icon />
@@ -39,45 +38,46 @@ export const PrimaryWithButton: Story = {
       </>
     ),
     disabled: false,
+    variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary",
     children: "Secondary Button",
     disabled: false,
+    variant: "secondary",
   },
 };
 export const Tertiary: Story = {
   args: {
-    variant: "tertiary",
     children: "Tertiary",
     disabled: false,
+    variant: "tertiary",
   },
 };
 export const Link: Story = {
   args: {
-    variant: "link",
     children: "Link-button",
     disabled: false,
+    variant: "link",
   },
 };
 
 export const FullWidth: Story = {
   args: {
-    variant: "primary",
     children: "Full Width Button",
     disabled: false,
     fullWidth: true,
+    variant: "primary",
   },
 };
 
 export const AsLink: Story = {
   args: {
     as: "a",
-    variant: "primary",
     children: "Link that looks like a button",
     href: "https://www.google.com",
+    variant: "primary",
   },
 };
