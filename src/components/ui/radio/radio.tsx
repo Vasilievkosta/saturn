@@ -1,5 +1,10 @@
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+
 import * as RadioGroup from "@radix-ui/react-radio-group";
+
 import s from "./radio.module.scss";
+
+import { RadioItem } from "./radioItem";
 
 export type RadioOption = {
   disabled?: boolean;
@@ -7,28 +12,19 @@ export type RadioOption = {
   value: string;
 };
 
-const RadioItem = (props: RadioOption) => (
-  <div className={s.itemWrap}>
-    <RadioGroup.Item className={s.item} value={props.value} id={props.value}>
-      <RadioGroup.Indicator className={s.indicator} />
-    </RadioGroup.Item>
-    <label className={s.label} htmlFor={props.value}>
-      {props.label}
-    </label>
-  </div>
-);
-
-type Group = {
+export type GroupProps = {
   options: RadioOption[];
-  disabled: boolean;
-};
+} & ComponentPropsWithoutRef<typeof RadioGroup.Root>;
 
-export const RadioGroupDemo = (props: Group) => (
-  <form>
-    <RadioGroup.Root className={s.root} aria-label="View density">
-      {props.options.map((item, index) => (
-        <RadioItem key={index} label={item.label} value={item.value} />
-      ))}
-    </RadioGroup.Root>
-  </form>
-);
+export const CustomRadioGroup = forwardRef<ElementRef<typeof RadioGroup.Root>, GroupProps>((props, ref) => {
+  const { options, className, ...rest } = props;
+  return (
+    <div>
+      <RadioGroup.Root aria-label={"View density"} className={`${s.root} ${className}`} ref={ref} {...rest}>
+        {options.map((item, index) => (
+          <RadioItem key={index} {...item} />
+        ))}
+      </RadioGroup.Root>
+    </div>
+  );
+});

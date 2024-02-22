@@ -1,0 +1,30 @@
+/* stylelint-disable order/properties-order */
+.lern {
+  max-width: 420px;
+  padding: 36px;
+
+  background-color: var(--color-dark-700);
+
+  & .title {
+    margin-bottom: 45px;
+    text-align: center;
+  }
+
+  & .count {
+    color: var(--color-dark-100);
+    margin-bottom: 35px;
+  }
+
+  & .rate {
+    margin: 12px 0;
+  }
+
+  & .form {
+    display: flex;
+    flex-direction: column;
+
+    & .radio {
+      margin-bottom: 29px;
+    }
+  }
+}

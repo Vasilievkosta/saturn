@@ -1,9 +1,9 @@
 import Icon from "@/assets/icons/logoutHover";
 
-// eslint-disable-next-line prettier/prettier
 import s from "./components/ui/button/button.module.scss";
 
 import { Button } from "./components/ui/button";
+import { MyForm } from "./components/auth/loginForm/myForm";
 
 export function App() {
   return (
@@ -27,6 +27,8 @@ export function App() {
           Icon <Icon className={s.onIcon} iconColor={"red"} />
         </>
       </Button>
+
+      <MyForm />
     </div>
   );
 }
