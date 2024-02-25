@@ -11,7 +11,7 @@ export type RadioOption = {
 } & ComponentPropsWithoutRef<typeof RadioGroup.Item>;
 
 export const RadioItem = (props: RadioOption) => {
-  const { disabled, label, value, title, ...rest } = props;
+  const { disabled, label, title, value, ...rest } = props;
 
   return (
     <div className={s.itemWrap}>

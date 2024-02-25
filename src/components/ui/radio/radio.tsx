@@ -17,7 +17,8 @@ export type GroupProps = {
 } & ComponentPropsWithoutRef<typeof RadioGroup.Root>;
 
 export const CustomRadioGroup = forwardRef<ElementRef<typeof RadioGroup.Root>, GroupProps>((props, ref) => {
-  const { options, className, ...rest } = props;
+  const { className, options, ...rest } = props;
+
   return (
     <div>
       <RadioGroup.Root aria-label={"View density"} className={`${s.root} ${className}`} ref={ref} {...rest}>

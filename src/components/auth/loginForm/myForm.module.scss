@@ -2,6 +2,7 @@
 .lern {
   max-width: 420px;
   padding: 36px;
+  margin-top: 100px;
 
   background-color: var(--color-dark-700);
 
@@ -20,9 +21,6 @@
   }
 
   & .form {
-    display: flex;
-    flex-direction: column;
-
     & .radio {
       margin-bottom: 29px;
     }
