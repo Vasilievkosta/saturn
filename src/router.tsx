@@ -15,9 +15,18 @@ const publicRoutes: RouteObject[] = [
 const privateRoutes: RouteObject[] = [
   {
     path: "/",
-    element: <div>hello</div>,
+    element: <Hello />,
   },
 ];
+
+function Hello() {
+  const { data, isLoading, isError } = useGetDecksQuery();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+
+  return <div>{JSON.stringify(data)}</div>;
+}
 
 const router = createBrowserRouter([
   {
@@ -28,18 +37,10 @@ const router = createBrowserRouter([
 ]);
 
 export const Router = () => {
-  const { data, isLoading, isError } = useGetDecksQuery();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
-
-  return <div>{JSON.stringify(data)}</div>;
-
-  //   return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 };
 
 function PrivateRoutes() {
-  // const isAuthenticated = false;
   const isAuthenticated = true;
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
