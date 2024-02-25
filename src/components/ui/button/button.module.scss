@@ -2,6 +2,7 @@
 .button {
   all: unset;
   cursor: pointer;
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;

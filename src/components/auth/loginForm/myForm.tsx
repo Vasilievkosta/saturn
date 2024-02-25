@@ -45,7 +45,7 @@ export const MyForm = () => {
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <ControlledRadioGroup options={dataTasks} control={control} className={s.radio} name={"radio"} />
 
-        <Button>Next Question</Button>
+        <Button fullWidth>Next Question</Button>
       </form>
     </div>
   );

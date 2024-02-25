@@ -1,12 +1,9 @@
 import { Ref, SVGProps, forwardRef, memo } from "react";
-const SvgComponent = (
-  props: { iconColor: string } & SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>,
-) => {
+const SvgComponent = (props: { iconcolor: string } & SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => {
   return (
     <svg
       className={props.className}
-      fill={props.iconColor}
+      fill={props.iconcolor}
       height={18}
       ref={ref}
       viewBox={"0 0 24 24"}

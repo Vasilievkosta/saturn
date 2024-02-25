@@ -5,6 +5,9 @@ import { MyForm } from "./myForm";
 const meta = {
   title: "Draft/myForm",
   component: MyForm,
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof MyForm>;
 
