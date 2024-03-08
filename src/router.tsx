@@ -1,11 +1,17 @@
 import { createBrowserRouter, Navigate, Outlet, RouteObject, RouterProvider } from "react-router-dom";
-import { useGetDecksQuery } from "./services/base-api";
+
 import { AppTest } from "./AppTest";
+import { DecksPage } from "./pages/decks/decks-page";
+import { Page } from "./components/ui/page";
 
 const publicRoutes: RouteObject[] = [
   {
     path: "/login",
-    element: <div>login</div>,
+    element: (
+      <div>
+        <Page>login</Page>
+      </div>
+    ),
   },
   {
     path: "/app",
@@ -15,18 +21,13 @@ const publicRoutes: RouteObject[] = [
 const privateRoutes: RouteObject[] = [
   {
     path: "/",
-    element: <Hello />,
+    element: (
+      <Page>
+        <DecksPage />
+      </Page>
+    ),
   },
 ];
-
-function Hello() {
-  const { data, isLoading, isError } = useGetDecksQuery();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
-
-  return <div>{JSON.stringify(data)}</div>;
-}
 
 const router = createBrowserRouter([
   {
