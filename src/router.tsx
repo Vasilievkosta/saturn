@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, Outlet, RouteObject, RouterProvider } fr
 import { AppTest } from "./AppTest";
 import { DecksPage } from "./pages/decks/decks-page";
 import { Page } from "./components/ui/page";
+import { My } from "./components/ui/layout/trener";
 
 const publicRoutes: RouteObject[] = [
   {
@@ -26,6 +27,10 @@ const privateRoutes: RouteObject[] = [
         <DecksPage />
       </Page>
     ),
+  },
+  {
+    path: "/my",
+    element: <My>{"My"}</My>,
   },
 ];
 
