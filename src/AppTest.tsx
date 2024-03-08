@@ -4,7 +4,6 @@ import s from "./components/ui/button/button.module.scss";
 
 import { Button } from "./components/ui/button";
 import { MyForm } from "./components/auth/loginForm/myForm";
-import { Header } from "./components/ui/header";
 
 export function AppTest() {
   const styleApp: any = {
@@ -16,7 +15,6 @@ export function AppTest() {
   };
   return (
     <div style={styleApp}>
-      <Header isLoggedIn={false} />
       <div>
         <MyForm />
       </div>

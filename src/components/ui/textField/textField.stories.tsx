@@ -1,48 +1,46 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { TextField } from ".";
+import { TextField } from './'
 
 const meta = {
   argTypes: {
-    // variant: {
-    //   control: { type: 'radio' },
-    //   options: ['primary', 'secondary'],
-    // },
+    type: {
+      control: { type: 'radio' },
+      options: ['default', 'password', 'search', 'error'],
+    },
   },
   component: TextField,
-  tags: ["autodocs"],
-  title: "Components/TextField",
-} satisfies Meta<typeof TextField>;
+  tags: ['autodocs'],
+  title: 'Components/TextField',
+} satisfies Meta<typeof TextField>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    label: "Input",
+    label: 'Input',
+    placeholder: 'Input',
   },
-};
-
-export const WithError: Story = {
+}
+export const Password: Story = {
   args: {
-    error: "Some error",
+    label: 'Input',
+    placeholder: 'Input',
+    type: 'password',
   },
-};
-
-export const Disabled: Story = {
+}
+export const Search: Story = {
   args: {
-    label: "Input",
+    label: 'Search',
+    placeholder: 'Input',
+    type: 'search',
   },
-};
-
-export const TypeSearch: Story = {
+}
+export const Error: Story = {
   args: {
-    label: "Search",
+    error: 'Error!',
+    label: 'Input',
+    placeholder: 'Error',
   },
-};
-
-export const TypePassword: Story = {
-  args: {
-    label: "Password",
-  },
-};
+}

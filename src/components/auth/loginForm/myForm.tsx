@@ -6,6 +6,7 @@ import { Button } from "../../ui/button";
 import { Typography } from "@/components/ui/typography";
 import { RadioOption } from "@/components/ui/radio";
 import { ControlledRadioGroup } from "@/components/ui/radio/controlledRadio";
+import { useGetLearnCardQuery } from "@/services/base-api";
 
 type FormValues = {
   radio: string;
@@ -27,6 +28,9 @@ export const MyForm = () => {
   const onSubmit = (data: FormValues) => {
     console.log(data);
   };
+
+  const result = useGetLearnCardQuery("clsdkeza3083frr2ubqzq3lmf");
+  console.log(result.data);
 
   return (
     <div className={s.lern}>
