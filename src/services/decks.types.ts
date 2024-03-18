@@ -57,3 +57,9 @@ export type getLernCard = {
   created: string;
   updated: string;
 };
+
+export type postLoginType = {
+  password: string;
+  email: string;
+  rememberMe: boolean;
+};
