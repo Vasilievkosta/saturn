@@ -5,6 +5,8 @@ import s from "@/components/ui/baseTable/baseTable.module.scss";
 import { useGetDecksQuery, useCreateDecksMutation, useDeleteDecksMutation } from "@/services/base-api";
 import { TextField } from "@/components/ui/textField";
 import { Button } from "@/components/ui/button";
+import { Deck } from "@/services/decks.types";
+import { Spinner } from "@/components/ui/spinner/spinner";
 
 export const DecksPage = () => {
   const [search, setSearch] = useState("");
@@ -14,8 +16,9 @@ export const DecksPage = () => {
 
   const [deleteDeck, { isLoading: isDeckBeingDeleted }] = useDeleteDecksMutation();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
   if (isError) return <div>Error</div>;
+  console.log(data);
   return (
     <>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -46,7 +49,7 @@ export const DecksPage = () => {
         </Table.Head>
 
         <Table.Body>
-          {data?.items.map((deck) => {
+          {data?.items.map((deck: Deck) => {
             return (
               <Table.Row key={deck.id}>
                 <Table.Cell>

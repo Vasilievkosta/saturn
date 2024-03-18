@@ -4,13 +4,19 @@ import { AppTest } from "./AppTest";
 import { DecksPage } from "./pages/decks/decks-page";
 import { Page } from "./components/ui/page";
 import { My } from "./components/ui/layout/trener";
+import { useGetMeQuery } from "./services/base-api";
+import { LoginForm } from "./components/auth/loginForm/loginForm";
+import { MyForm } from "./components/auth/loginForm/myForm";
 
 const publicRoutes: RouteObject[] = [
   {
     path: "/login",
     element: (
       <div>
-        <Page>login</Page>
+        <Page>
+          <LoginForm />
+          <MyForm />
+        </Page>
       </div>
     ),
   },
@@ -47,7 +53,10 @@ export const Router = () => {
 };
 
 function PrivateRoutes() {
-  const isAuthenticated = true;
+  let { isError } = useGetMeQuery();
+  console.log(isError);
+
+  let isAuthenticated = !isError;
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }
